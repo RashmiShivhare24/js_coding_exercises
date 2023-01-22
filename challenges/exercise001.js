@@ -2,42 +2,60 @@
 
 export function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  console.log(word.charAt(0).toUpperCase() + word.substring(1,word.length));
   return word.charAt(0).toUpperCase() + word.substring(1,word.length);
-  
 }
 
 export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+  return firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();
 }
 
 export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+  let VAT = (originalPrice/100) * vatRate;
+  VAT = Number.isInteger(VAT) ? Number(VAT + originalPrice).toFixed(0): Number(VAT + originalPrice).toFixed(2);
+  return Number(VAT) ;
 }
 
 export function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  let salePrice = (originalPrice/100)*reduction;
+  salePrice = Number.isInteger(salePrice)? Number(originalPrice - salePrice).toFixed(0): Number(originalPrice-salePrice).toFixed(2);
+  return Number(salePrice);
 }
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+    var position;
+    var length;
+      
+      if(str.length % 2 == 1) {
+        position = str.length / 2;
+        length = 1;
+      } else {
+        position = str.length / 2 - 1;
+        length = 2;
+      }
+return str.substring(position, position + length);
 }
 
 export function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  /* Splitting word into array, reversing the array & then joining all elements of array into string */
+  var splitWord = word.split("");
+  var reverseArray = splitWord.reverse();
+  var joinArray = reverseArray.join("");
+  return joinArray;
+// Can be refactored to 1 LOC: word.split().reverse().join("");
 }
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  // let reverseWordArr = words.split(" ").map(word => word.split("").reverse().join(""));
+  //result = reverseWordArr.join();
 }
 
 export function countLinuxUsers(users) {
@@ -47,10 +65,24 @@ export function countLinuxUsers(users) {
 
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+      var average = "";
+      var sum = 0;
+        for (var number of scores) {
+        sum += number;
+        }
+      average = Number.isInteger?(sum / scores.length).toFixed(2): (sum / scores.length).toFixed(0);
+  return Number(average);
 }
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+
+    if (n % 3 == 0 && n % 5 == 0)
+        return("fizzbuzz");
+    else if (n % 5 == 0)
+        return("buzz");
+    else if (n % 3 === 0)
+        return("fizz");
+    else
+        return(n);
 }
