@@ -1,4 +1,4 @@
-// Note: Be sure to check out all the exercises corresponding .md files (in docs)! 📘 👍
+// Note: Be sure to check out all the exercises corresponding .md files (in docs)!
 
 export function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
@@ -8,7 +8,7 @@ export function capitalize(word) {
 export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  return firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();
+  return firstName.charAt(0).toUpperCase() + '.' + lastName.charAt(0).toUpperCase();
 }
 
 export function addVAT(originalPrice, vatRate) {
@@ -54,13 +54,28 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // let reverseWordArr = words.split(" ").map(word => word.split("").reverse().join(""));
-  //result = reverseWordArr.join();
+    const reversedArray = [];
+    let reversedWord= "";
+    
+      for(let word of words)
+      { 
+        reversedWord = word.split("").reverse().join("");
+        reversedArray.push(reversedWord);
+      }
+   return reversedArray;
 }
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+  let count = 0;
+      for(let user of users)
+      {
+          if(user.type === "Linux")
+        {
+          count += 1;
+        }
+      }
+  return count;
 }
 
 export function getMeanScore(scores) {
