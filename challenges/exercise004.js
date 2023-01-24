@@ -24,7 +24,14 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+  let verbsArray = [];
+
+  for (let word of words) {
+    if(word.slice(0,3) === "to "){
+       verbsArray.push(word);
+    }
+  }
+  return verbsArray;
 }
 
 export function getIntegers(nums) {
@@ -62,7 +69,7 @@ export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   const longestSides = [];
    for(let i = 0; i < triangles.length; i++){
-      longestSides.push(Math.max(triangles[i]));
+      longestSides.push(Math.max(...triangles[i]));
    }
    return longestSides;
 }
