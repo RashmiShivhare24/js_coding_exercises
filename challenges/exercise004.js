@@ -62,7 +62,14 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+    const matchedSentences = [];
+    for(let sentence of sentences)
+      {
+        if(sentence.toLowerCase().includes(str.toLowerCase())){
+          matchedSentences.push(sentence);
+          }
+      }
+  return matchedSentences;
 }
 
 export function getLongestSides(triangles) {
