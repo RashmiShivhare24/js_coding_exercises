@@ -1,6 +1,6 @@
 export function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  // Your code here!
+  return nums.map(number => number * number);
 }
 
 export function camelCaseWords(words) {
@@ -10,7 +10,18 @@ export function camelCaseWords(words) {
 
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+  let totalSubjectsCount = 0;
+
+      // for(let i = 0; i < people.length; i++){
+      //   if(people[i])
+      // }
+    //  for(let person in people){
+    //     if(person.subjects.length > 0){
+    //       totalSubjectsCount += 1;
+    //     }
+    //  }
+  return totalSubjectsCount;
+
 }
 
 export function checkIngredients(menu, ingredient) {

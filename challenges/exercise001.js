@@ -54,27 +54,24 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-    const reversedArray = [];
-    let reversedWord= "";
-    
-      for(let word of words)
-      { 
-        reversedWord = word.split("").reverse().join("");
-        reversedArray.push(reversedWord);
-      }
-   return reversedArray;
+  const reversedArray = [];
+  let reversedWord = "";
+
+  for (let word of words) {
+    reversedWord = word.split("").reverse().join("");
+    reversedArray.push(reversedWord);
+  }
+  return reversedArray;
 }
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   let count = 0;
-      for(let user of users)
-      {
-          if(user.type === "Linux")
-        {
-          count += 1;
-        }
-      }
+  for (let user of users) {
+    if (user.type === "Linux") {
+      count += 1;
+    }
+  }
   return count;
 }
 
